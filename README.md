@@ -193,7 +193,7 @@ If you still don't see your logs, see [log shipping troubleshooting](https://doc
 
 **Requirements**:
 
-* Go version >= 1.22.x
+* Go version >= 1.25.x
 
 To contribute, clone this repo
 and install dependencies
@@ -209,6 +209,8 @@ Always confirm your logs are arriving at your Logz.io account.
 
 
 ## Change log
+- **0.8.0**:
+  - Upgrade FluentBit from v4.1.1 to v5.0.3
 - **0.7.0**:
   - Upgrade FluentBit from v3.1.4 to v4.1.1
   - Upgrade GoLang to v1.25.0

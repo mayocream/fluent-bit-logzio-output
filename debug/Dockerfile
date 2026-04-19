@@ -1,4 +1,4 @@
-FROM golang:1.18.4 as gobuilder
+FROM golang:1.25 as gobuilder
 
 ENV GOOS=linux\
     GOARCH=amd64
@@ -9,7 +9,7 @@ WORKDIR /go/src/logzio
 
 RUN make
 
-FROM fluent/fluent-bit:1.9.7-debug
+FROM fluent/fluent-bit:5.0.3-debug
 
 COPY --from=gobuilder /go/src/logzio/build/out_logzio.so /fluent-bit/bin/
 COPY --from=gobuilder /go/src/logzio/test/fluent-bit.conf /fluent-bit/etc/
